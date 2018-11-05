@@ -1,6 +1,7 @@
 {
   "name": "tx-client",
   "version": "0.0.0",
+  "author": "MAI Huynh Gia Bao",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

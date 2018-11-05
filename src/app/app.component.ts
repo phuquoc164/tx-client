@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isUpload: boolean = true;
+  isRestitution: boolean = false; 
+
+  constructor (){
+
+  }
+
+  ngOnInit(){
+    
+  }
+
+  selectPage(num){
+    if (num == 0) {
+      this.isUpload = true;
+      this.isRestitution = false;
+    }else {
+      this.isUpload = false;
+      this.isRestitution = true; 
+    }
+  }
 }
