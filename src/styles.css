@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+
+/*======================================*/
+/*				Global 					*/
+/*======================================*/
+
+button {
+	padding: 10px 30px;
+	border: 1px solid #000;
+}
+
+.height-350 {height: 350px;max-width: 800px;margin: 0 auto;}

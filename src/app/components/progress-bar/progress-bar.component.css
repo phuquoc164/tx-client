@@ -1,0 +1,22 @@
+p {
+	border: 1px solid #000;
+	border-right: 0;
+    padding: 10px;
+    position: relative;
+}
+p:not(:first-child) {border-left: 0;padding-left:30px;}
+
+p::after {
+	content: '';
+	position: absolute;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	width: 32px;
+	height: 32px;
+	transform: rotate(45deg);
+	top: 6px;
+	right: -16px;
+	z-index: -1;
+}
+
+p.active, p.active::after {background-color: #007bff;}
