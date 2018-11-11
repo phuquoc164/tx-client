@@ -3,7 +3,9 @@ Dependencies: Nodejs
 
 ## Install project
 
-Run 'npm install' to install project and packages. 
+Run `npm install -g @angular/cli` to install angular cli. 
+
+Run `npm install` to install project and packages. 
 
 ## Development server
 
