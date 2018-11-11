@@ -13,20 +13,20 @@ export class AppComponent {
   responseServer: any;
 
   constructor (
-    private http : HttpClient
+    // private http : HttpClient
   ){
 
   }
 
   ngOnInit(){
-    this.http.get('http://localhost:9001/').subscribe(
-      data => {
-        this.responseServer = data['message'];
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    // this.http.get('http://localhost:9001/').subscribe(
+    //   data => {
+    //     this.responseServer = data['message'];
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   selectPage(num){
