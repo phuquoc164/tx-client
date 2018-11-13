@@ -8,7 +8,7 @@ export class LocalStorageService {
   constructor() { }
 
   private saveValue(key, value) {
-    localStorage.setItem(key, value);
+    sessionStorage.setItem(key, value);
   }
 
   private getValue(key, storage) {
@@ -16,7 +16,7 @@ export class LocalStorageService {
   }
 
   private saveJson(key, json) {
-    localStorage.setItem(key, JSON.stringify(json));
+    sessionStorage.setItem(key, JSON.stringify(json));
   }
 
   private getJson(key, storage) {
@@ -31,28 +31,28 @@ export class LocalStorageService {
     storage.clear();
   }
 
-  saveValueInLocalStorage(key, value) {
+  saveValueInSessionStorage(key, value) {
     this.saveValue(key, value);
   }
 
-  getValueInLocalStorage(key) {
-    return this.getValue(key, localStorage);
+  getValueInSessionStorage(key) {
+    return this.getValue(key, sessionStorage);
   }
 
-  saveJsonInLocalStorage(key, json) {
+  saveJsonInSessionStorage(key, json) {
     this.saveJson(key, json);
   }
 
-  getJsonInLocalStorage(key) {
-    return this.getJson(key, localStorage);
+  getJsonInsessionStorage(key) {
+    return this.getJson(key, sessionStorage);
   }
 
-  removeDataInLocalStorage(key) {
-    this.removeData(key, localStorage);
+  removeDataInSessionStorage(key) {
+    this.removeData(key, sessionStorage);
   }
 
-  clearLocalStorage() {
-    this.clearStorage(localStorage);
+  clearSessionStorage() {
+    this.clearStorage(sessionStorage);
   }
 
 }

@@ -6,20 +6,20 @@
 
 
 <!-- Step 1: Select file -->
-<app-file-selection></app-file-selection>
+<app-file-selection *ngIf="isInStep(1)"></app-file-selection>
 
 <!-- Step 2: File detail -->
 
-<app-file-detail></app-file-detail>
+<app-file-detail *ngIf="isInStep(2)"></app-file-detail>
 
 <!-- Step 2: Select file's columns types-->
 
-<app-file-setting></app-file-setting>
+<app-file-setting *ngIf="isInStep(3)"></app-file-setting>
 
 <!-- Step 3: File informations form -->
 
-<app-file-infos></app-file-infos>
+<app-file-infos *ngIf="isInStep(4)"></app-file-infos>
 
 <!-- Step 4: upload validation -->
 
-<app-upload-validation></app-upload-validation>
+<app-upload-validation *ngIf="isInStep(5)"></app-upload-validation>
