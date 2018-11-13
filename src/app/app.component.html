@@ -1,7 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <a (click)="selectPage(0)"> Upload </a>
-  <a (click)="selectPage(1)"> Restitution </a>
+  <div class="col-12 col-md-11 col-lg-9 px-1 btn-navigation mb-5">
+    <div class="float-right">
+      <a (click)="selectPage(0)" [class]="isUpload ? 'active' : ''">Chargement</a>
+      <a (click)="selectPage(1)" [class]="isRestitution ? 'active' : ''">Restitution</a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
   <app-upload *ngIf="isUpload"></app-upload>
   <app-restitution *ngIf="isRestitution"></app-restitution>
   <p>{{responseServer}}</p>

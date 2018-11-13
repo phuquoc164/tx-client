@@ -1,11 +1,20 @@
-<p>
+<!-- <p>
   file-selection works!
 </p>
 
 <input type="file" name="csv" ng2FileSelect [uploader]="uploader" />
 
-<button type="button" class="btn btn-success btn-s" 
-  (click)="uploader.uploadAll()" 
-  [disabled]="!uploader.getNotUploadedItems().length" >
-      Upload an csv
-</button>
+<button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+  Upload an csv
+</button> -->
+
+<div class="">
+  <div class="d-flex align-items-center justify-content-center height-350 border border-dark mb-5">
+      <input type="file" name="csv" ng2FileSelect [uploader]="uploader" />
+    <!-- <button class="text-center">Choisir le fichier</button> -->
+  </div>
+  <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+    Upload an csv
+  </button>
+  <!-- <button class="">Analyser</button> -->
+</div>

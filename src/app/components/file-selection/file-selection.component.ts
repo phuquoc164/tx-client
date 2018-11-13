@@ -23,7 +23,6 @@ export class FileSelectionComponent implements OnInit {
       if (status == 200) {
         let data = JSON.parse(response);
         if (data['success'] == true){
-          alert('File uploaded successfully');
           this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,2);  
           this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_1,data['firstRow']);  
         }else {
