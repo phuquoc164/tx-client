@@ -14,6 +14,8 @@ import { FileSettingComponent } from './components/file-setting/file-setting.com
 import { FileInfosComponent } from './components/file-infos/file-infos.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { UploadValidationComponent } from './components/upload-validation/upload-validation.component';
+import { FileSelectDirective } from 'ng2-file-upload';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { UploadValidationComponent } from './components/upload-validation/upload
     FileSettingComponent,
     FileInfosComponent,
     ProgressBarComponent,
-    UploadValidationComponent
+    UploadValidationComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),//{ onSameUrlNavigation: 'reload' }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

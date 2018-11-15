@@ -1,0 +1,10 @@
+.btn-navigation a {
+	color: #000;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.btn-navigation a.active {
+	background-color: #007bff;
+	border-color: #007bff;
+}

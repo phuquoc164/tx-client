@@ -1,25 +1,47 @@
-<h1>L'étape chargement </h1>
+<div class="container-fluid chargement">
+	<div class="row justify-content-center">
+		<!-- <div class="col-12 col-md-11 col-lg-9 px-1 btn-navigation mb-5">
+			<div class="float-right">
+				<a href="#" class="active">Chargement</a>
+				<a href="#">Restitution</a>
+			</div>
+			<div class="clearfix"></div>		
+		</div> -->
 
-<!-- Progress bar -->
+		<!-- Progress bar -->
+		<div class="col-12 col-md-9 px-1 progess-bar mb-5">
+			<app-progress-bar></app-progress-bar>
+		</div>	
 
-<app-progress-bar></app-progress-bar>
+
+		<!-- Step 1: Select file -->
+		<div *ngIf="isInStep(1)" class="col-12 col-md-9 px-1">
+			<app-file-selection></app-file-selection>	
+		</div>
+		
+
+		<!-- Step 2: File detail -->
+		<div *ngIf="isInStep(2)" class="col-12 col-md-9 px-1">
+			<app-file-detail></app-file-detail>
+		</div>
+
+		<!-- Step 2: Select file's columns types-->
+		<div *ngIf="isInStep(3)" class="col-12 col-md-9 px-1">
+			<app-file-setting></app-file-setting>
+		</div>
 
 
-<!-- Step 1: Select file -->
-<app-file-selection></app-file-selection>
+		<!-- Step 3: File informations form -->
+		<div *ngIf="isInStep(4)" class="col-12 col-md-9 px-1">
+			<app-file-infos></app-file-infos>
+		</div>
 
-<!-- Step 2: File detail -->
 
-<app-file-detail></app-file-detail>
+		<!-- Step 4: upload validation -->
+		<div *ngIf="isInStep(5)" class="col-12 col-md-9 px-1">
+			<app-upload-validation></app-upload-validation>
+		</div>
+	</div>
+</div>
+	
 
-<!-- Step 2: Select file's columns types-->
-
-<app-file-setting></app-file-setting>
-
-<!-- Step 3: File informations form -->
-
-<app-file-infos></app-file-infos>
-
-<!-- Step 4: upload validation -->
-
-<app-upload-validation></app-upload-validation>
