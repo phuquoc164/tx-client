@@ -1,3 +1,5 @@
+import { Constants } from './../../shared/constatns';
+import { LocalStorageService } from './../../services/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private localStorageService:LocalStorageService
+  ) { }
 
   ngOnInit() {
+  }
+
+  isInStep(number){
+    return number <= this.localStorageService.getValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP);
   }
 
 }
