@@ -23,7 +23,8 @@ export class FileSelectionComponent implements OnInit {
       if (status == 200) {
         let data = JSON.parse(response);
         if (data['success'] == true){
-          this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,2);  
+          this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,2);
+          this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_ORIGINAL,data['link']);    
           this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_1,data['firstRow']);  
         }else {
           this.error == "Il n'y a un problème. Merci de re-éssayer"

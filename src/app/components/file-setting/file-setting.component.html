@@ -1,3 +1,24 @@
-<p>
-  file-setting works!
-</p>
+<div>
+  <input class="form-check-input" type="radio" name="selectAll" [value]="true" [(ngModel)]="selectAll">
+  Select all
+</div>
+<div>
+  <input class="form-check-input" type="radio" name="selectAll" [value]="false" [(ngModel)]="selectAll">
+  Select some
+</div>
+
+<div *ngFor="let col of firstLine">
+  <input *ngIf="!selectAll" type="checkbox" [(ngModel)]="col.selected" [ngModelOptions]="{standalone: true}" />
+  {{col.colName}}
+  <select [(ngModel)]="col.type" [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let type of typeData" required>
+      {{type}}
+    </option>
+  </select>
+</div>
+
+<div>
+  <button type="button" class="btn btn-success btn-s" (click)="submit()">
+    Next
+  </button>
+</div>
