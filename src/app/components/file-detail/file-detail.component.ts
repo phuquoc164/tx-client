@@ -24,6 +24,7 @@ export class FileDetailComponent implements OnInit {
       let col = new ColHeader(i, e);
       this.arrayHeaderEmpty.push(col);
     });
+    console.log(this.arrayHeaderEmpty)
   }
 
   useFirstLink(value){
@@ -32,6 +33,7 @@ export class FileDetailComponent implements OnInit {
     }else {
       this.isUseFirstLink = true;
     }
+    console.log(this.arrayHeaderEmpty)
   }
 
   deleteFirstLink(value){

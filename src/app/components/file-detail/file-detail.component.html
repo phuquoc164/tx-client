@@ -20,12 +20,8 @@
 
 <div *ngIf="!isUseFirstLink">
   Names:
-  <form>
-    <div class="form-group" *ngFor="let col of arrayHeaderEmpty">
-      <input type="text" class="form-control" placeholder="column {{col.id +1}}" [(ngModel)]="col.colName" name="col.id"
+      <input type="text" *ngFor="let col of arrayHeaderEmpty" class="form-control" placeholder="column {{col.id +1}}" [(ngModel)]="col.colName" name="col.colName"
         (focus)="$event.target.placeholder = ''" (blur)="$event.target.placeholder = 'column ' + (col.id +1)" />
-    </div>
-  </form>
 </div>
 
 <p>
