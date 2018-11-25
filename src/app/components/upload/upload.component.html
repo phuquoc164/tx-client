@@ -11,14 +11,14 @@
 		<!-- Progress bar -->
 		<div class="col-12 col-md-9 px-1 progess-bar mb-5">
 			<app-progress-bar></app-progress-bar>
-		</div>	
+		</div>
 
 
 		<!-- Step 1: Select file -->
 		<div *ngIf="isInStep(1)" class="col-12 col-md-9 px-1">
-			<app-file-selection></app-file-selection>	
+			<app-file-selection></app-file-selection>
 		</div>
-		
+
 
 		<!-- Step 2: File detail -->
 		<div *ngIf="isInStep(2)" class="col-12 col-md-9 px-1">
@@ -30,18 +30,21 @@
 			<app-file-setting></app-file-setting>
 		</div>
 
+		<!-- Step 2: File upload validation quality -->
+		<div *ngIf="isInStep(4)" class="col-12 col-md-9 px-1">
+			<app-file-upload-quality></app-file-upload-quality>
+		</div>
+
 
 		<!-- Step 3: File informations form -->
-		<div *ngIf="isInStep(4)" class="col-12 col-md-9 px-1">
+		<div *ngIf="isInStep(5)" class="col-12 col-md-9 px-1">
 			<app-file-infos></app-file-infos>
 		</div>
 
 
 		<!-- Step 4: upload validation -->
-		<div *ngIf="isInStep(5)" class="col-12 col-md-9 px-1">
+		<div *ngIf="isInStep(6)" class="col-12 col-md-9 px-1">
 			<app-upload-validation></app-upload-validation>
 		</div>
 	</div>
 </div>
-	
-

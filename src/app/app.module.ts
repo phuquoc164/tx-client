@@ -16,6 +16,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { UploadValidationComponent } from './components/upload-validation/upload-validation.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { FormsModule } from '@angular/forms';
+import { FileUploadQualityComponent } from './components/file-upload-quality/file-upload-quality.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FileInfosComponent,
     ProgressBarComponent,
     UploadValidationComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    FileUploadQualityComponent
   ],
   imports: [
     BrowserModule,

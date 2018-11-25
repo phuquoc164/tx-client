@@ -23,7 +23,7 @@ export class UploadService {
       }
       this.http.post(Routes_api.analyseFile, body)
         .subscribe(
-          (data) => resolve(data),
+          (data) => resolve(data["data"]),
           (error) => reject(error)
         );
     });

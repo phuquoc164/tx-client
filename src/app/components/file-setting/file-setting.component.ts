@@ -26,7 +26,7 @@ export class FileSettingComponent implements OnInit {
       // let colHeader = new ColHeader(col.id, col.colName);
       this.firstLine.push(new ColHeader(col.id, col.colName));
     });
-  }
+  } 
   submit(){
     console.log("this.selectAll",this.selectAll);
     console.log("this.firstLine",this.firstLine);
@@ -37,7 +37,11 @@ export class FileSettingComponent implements OnInit {
       this.dataStep2.isDeleteFirstLink,
       this.selectAll,
       this.firstLine
-    ).then(data => console.log(data))
+    ).then(data => {
+      this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_3, data);
+      this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,4);
+      console.log(data)
+    })
     .catch(error => console.error(error))
   }
 }
