@@ -1,7 +1,7 @@
 {
     "home": {
         "chargement_Button": "Chargement",
-        "Restitution_Button": "Chargement"
+        "Restitution_Button": "Restitution"
     },
     "upload": {
         "progressbar": {
@@ -11,7 +11,7 @@
             "valid": "Valider"
         },
         "fileSelection": {
-            
+
         }
     }
 }
