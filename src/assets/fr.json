@@ -1,0 +1,17 @@
+{
+    "home": {
+        "chargement_Button": "Chargement",
+        "Restitution_Button": "Chargement"
+    },
+    "upload": {
+        "progressbar": {
+            "selectFile": "Choisir le fichier",
+            "selectData": "Choisir les données",
+            "fill": "Remplir les informations",
+            "valid": "Valider"
+        },
+        "fileSelection": {
+            
+        }
+    }
+}

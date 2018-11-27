@@ -28,4 +28,8 @@ export class FileUploadQualityComponent implements OnInit {
     });
     console.log("this.firstLine",this.firstLine)
   }
+
+  submit(){
+      this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,5);
+  }
 }

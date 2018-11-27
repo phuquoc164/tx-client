@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,13 @@ export class AppComponent {
   isUpload: boolean = true;
   isRestitution: boolean = false; 
   responseServer: any;
+  isFN: boolean = true;
 
   constructor (
     // private http : HttpClient
+    private translate: TranslateService,
   ){
-
+    this.translate.setDefaultLang('fr');
   }
 
   ngOnInit(){
@@ -36,6 +39,16 @@ export class AppComponent {
     }else {
       this.isUpload = false;
       this.isRestitution = true; 
+    }
+  }
+
+  selectLang(lang){
+    if (lang == "en"){
+      this.isFN = false;
+      this.translate.use('en');
+    }else {
+      this.isFN = true;
+      this.translate.use('fr');
     }
   }
 }

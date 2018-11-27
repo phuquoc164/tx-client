@@ -5,9 +5,19 @@
     
   </div>
   <div class="col-12 col-md-11 col-lg-9 px-1 btn-navigation mb-5 pt-3">
-    <div class="float-right text-center">
-      <a (click)="selectPage(0)" [class]="isUpload ? 'active' : ''">Chargement</a>
-      <a (click)="selectPage(1)" [class]="isRestitution ? 'active' : ''">Restitution</a>
+    <div class="langselect">
+        <a (click)="selectLang('en')"  [class]="isFN ? '' : 'active'">en</a>
+        <a (click)="selectLang('fr')" [class]="isFN ? 'active' : ''">fr</a>  
+    </div>
+    <div class="float-right text-center">     
+      <a (click)="selectPage(0)" [class]="isUpload ? 'active' : ''">
+          {{'home.chargement_Button' | translate}}
+      </a>
+      <!-- Chargement -->
+      <a (click)="selectPage(1)" [class]="isRestitution ? 'active' : ''">
+          {{'home.Restitution_Button' | translate}}
+        <!-- Restitution -->
+      </a>
     </div>
     <div class="clearfix"></div>
   </div>
