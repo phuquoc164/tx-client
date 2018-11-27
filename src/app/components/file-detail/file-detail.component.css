@@ -1,0 +1,8 @@
+p {
+	word-break: break-all;
+}
+
+input[type="text"] {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
