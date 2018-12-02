@@ -3,6 +3,8 @@ export class ColHeader {
     id: number;
     selected: boolean;
     type: string = 'string'; // string, date, number
+    dataEmpty: any;
+    dataError: any;
 
     constructor(id:any, colName:any){
         this.colName = colName;

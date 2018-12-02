@@ -1,0 +1,17 @@
+{
+    "home": {
+        "chargement_Button": "Upload",
+        "Restitution_Button": "Restitution"
+    },
+    "upload": {
+        "progressbar": {
+            "selectFile": "Select file",
+            "selectData": "select data",
+            "fill": "fill the information",
+            "valid": "validate"
+        },
+        "fileSelection": {
+            
+        }
+    }
+}

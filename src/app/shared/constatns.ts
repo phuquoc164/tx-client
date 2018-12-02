@@ -7,6 +7,7 @@ export const Constants = {
         UPLOAD_STEP: "UPLOAD_STEP",
         UPLOAD_STEP_1: "UPLOAD_STEP_1",
         UPLOAD_STEP_2:"UPLOAD_STEP_2",
+        UPLOAD_STEP_3:"UPLOAD_STEP_3",
         UPLOAD_LINK_ORIGINAL: "UPLOAD_LINK_ORIGINAL"
     },
     

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { RestitutionComponent } from './components/restitution/restitution.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { routes } from './shared/routes';
 import { FileSelectionComponent } from './components/file-selection/file-selection.component';
@@ -16,6 +16,13 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { UploadValidationComponent } from './components/upload-validation/upload-validation.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { FormsModule } from '@angular/forms';
+import { FileUploadQualityComponent } from './components/file-upload-quality/file-upload-quality.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -28,12 +35,20 @@ import { FormsModule } from '@angular/forms';
     FileInfosComponent,
     ProgressBarComponent,
     UploadValidationComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    FileUploadQualityComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),//{ onSameUrlNavigation: 'reload' }),
     FormsModule
   ],

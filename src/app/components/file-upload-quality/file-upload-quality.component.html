@@ -1,0 +1,7 @@
+<div *ngFor="let col of firstLine">
+  <p> {{col.colName}} ( empty: {{col.dataEmpty*100}}%, false: {{col.dataError*100}}% ) </p> 
+</div>
+
+<div class="text-center">
+	<button type="button" class="btn btn-success btn-s" (click)="submit()">Next</button>
+</div>
