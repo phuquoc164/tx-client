@@ -1,5 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<<<<<<< HEAD
 <div class="container">
   <div class="row justify-content-center">
   
@@ -20,27 +19,6 @@
             {{'home.Restitution_Button' | translate}}
         </a>
       </div>
-=======
-<div class="row">
-
-  <div class="col-12 d-flex align-items-center justify-content-center">
-    
-  </div>
-  <div class="col-12 col-md-11 col-lg-9 px-1 btn-navigation mb-5 pt-3">
-    <div class="langselect">
-        <a (click)="selectLang('en')"  [class]="isFN ? '' : 'active'">en</a>
-        <a (click)="selectLang('fr')" [class]="isFN ? 'active' : ''">fr</a>  
-    </div>
-    <div class="float-right text-center">     
-      <a (click)="selectPage(0)" [class]="isUpload ? 'active' : ''">
-          {{'home.chargement_Button' | translate}}
-      </a>
-      <!-- Chargement -->
-      <a (click)="selectPage(1)" [class]="isRestitution ? 'active' : ''">
-          {{'home.Restitution_Button' | translate}}
-        <!-- Restitution -->
-      </a>
->>>>>>> origin/bao
     </div>
   
     <app-upload *ngIf="isUpload"></app-upload>
