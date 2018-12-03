@@ -8,7 +8,8 @@ export const Constants = {
         UPLOAD_STEP_1: "UPLOAD_STEP_1",
         UPLOAD_STEP_2:"UPLOAD_STEP_2",
         UPLOAD_STEP_3:"UPLOAD_STEP_3",
-        UPLOAD_LINK_ORIGINAL: "UPLOAD_LINK_ORIGINAL"
+        UPLOAD_LINK_ORIGINAL: "UPLOAD_LINK_ORIGINAL",
+        UPLOAD_LINK_EDITED: "UPLOAD_LINK_EDITED"
     },
     
     TYPE_DATA: ["string", "number", "date"]

@@ -63,7 +63,6 @@ export class FileDetailComponent implements OnInit {
       }
       this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_2,data)
       this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,3)
-    
     }
   }
 }

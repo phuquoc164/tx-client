@@ -15,7 +15,7 @@ import { FileInfosComponent } from './components/file-infos/file-infos.component
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { UploadValidationComponent } from './components/upload-validation/upload-validation.component';
 import { FileSelectDirective } from 'ng2-file-upload';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FileUploadQualityComponent } from './components/file-upload-quality/file-upload-quality.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -50,7 +50,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),//{ onSameUrlNavigation: 'reload' }),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

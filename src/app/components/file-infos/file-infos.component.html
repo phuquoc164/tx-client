@@ -1,3 +1,23 @@
 <p>
   file-infos works!
 </p>
+
+<form [formGroup]="informationForm">
+  <div class="form-group">
+    <label>Nom du fichier:</label>
+    <input class="form-control" formControlName="fileName">
+    <label>Auteur:</label>
+    <input class="form-control" formControlName="autor">
+    <label>Mot-clès:</label>
+    <input class="form-control" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}">
+    <button (click)="enterKeyword()">OK</button>
+    <label *ngFor="let key of keywordsList">{{key}},</label>
+    <br>
+    <label>Description:</label>
+    <input class="form-control" formControlName="description">
+  </div>
+</form>
+
+<div class="text-center">
+  <button type="button" class="btn btn-success btn-s" (click)="submit()">Next</button>
+</div>
