@@ -12,4 +12,8 @@ export class FileInfosComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit() {
+    
+  }
+
 }

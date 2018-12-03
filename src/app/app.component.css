@@ -1,11 +1,22 @@
-.btn-navigation a {
-	color: #000;
-    border: 1px solid #000;
-    padding: 10px;
+a {
+	cursor: pointer; 
 }
 
-.btn-navigation a.active {
-	background-color: #007bff;
-	border-color: #007bff;
+.border-success{border: 1px solid #28a745;}
+
+.pageselect a {
+	color: #28a745;
+    border: 1px solid #28a745;
+	padding: 10px;
+	background-color: #ffffff;
+}
+
+.pageselect a.active {
+	background-color: #28a745;
 	color: #ffffff;
+}
+
+.langselect a.active {
+	text-decoration: underline;
+	color: #28a745;
 }

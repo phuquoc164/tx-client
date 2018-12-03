@@ -4,14 +4,41 @@
         "Restitution_Button": "Restitution"
     },
     "upload": {
+        "btnNext": "Next",
         "progressbar": {
             "selectFile": "Select file",
             "selectData": "select data",
             "fill": "fill the information",
             "valid": "validate"
         },
+        "fileDetail": {
+            "firstLine": "The first line of this file is",
+            "firstLineAsHeader": "Do you want to use the first line as the header ?",
+            "nameOfColumns": "Name of the columns:",
+            "deleteFirstLine": "Do you want to delete the first line ?"
+        },
         "fileSelection": {
-            
+            "uploadBtn": "Upload a file CSV"
+        },
+        "fileSetting": {
+            "questionSelectColumn": "Select the columns which you want to save :",
+            "selectAllColumn": "Select all columns",
+            "selectColumnSpecifique": "Select specific columns"
+        },
+        "fileQuality": {
+            "title": "The result of analyzing your datas :"
+        },
+        "fileInfo": {
+            "title": "Fill the informations of this file",
+            "nameFile": "Name of file",
+            "author": "Authors",
+            "keyword": "Keywords",
+            "Description": "Description"
         }
+    },
+    "global": {
+        "yes": "Yes",
+        "no": "No"
     }
+
 }

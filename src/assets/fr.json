@@ -4,14 +4,40 @@
         "Restitution_Button": "Restitution"
     },
     "upload": {
+        "btnNext": "Suivant",
         "progressbar": {
             "selectFile": "Choisir le fichier",
             "selectData": "Choisir les données",
             "fill": "Remplir les informations",
             "valid": "Valider"
         },
+        "fileDetail": {
+            "firstLine": "La première ligne du fichier est",
+            "firstLineAsHeader": "Voulez-vous utiliser la première ligne comme le header ?",
+            "nameOfColumns": "Nommez les colonnes:",
+            "deleteFirstLine": "Voulez-vous supprimer la première ligne ?"
+        },
         "fileSelection": {
-
+            "uploadBtn": "Télé-verser un fichier csv"
+        },
+        "fileSetting": {
+            "questionSelectColumn": "Selectionner les colonnes que vous voulez enregistrer :",
+            "selectAllColumn": "Selectionner tous les colonnes",
+            "selectColumnSpecifique": "Selectionner des colonnes spécifiques"
+        },
+        "fileQuality": {
+            "title": "Le résultat de l'analyse de vos données :"
+        },
+        "fileInfo": {
+            "title": "Remplir les informations pour ce fichier",
+            "nameFile": "Nom du fichier",
+            "author": "Auteurs",
+            "keyword": "Mot clés",
+            "Description": "Description"
         }
+    },
+    "global": {
+        "yes": "Oui",
+        "no": "Non"
     }
 }

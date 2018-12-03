@@ -1,28 +1,28 @@
 <div class="height-350 border border-dark mb-5 p-2">
-  <p>La première ligne du fichier est {{firstLine}}</p>
+  <p>{{'upload.fileDetail.firstLine' | translate}} {{firstLine}}</p>
   <div class="d-flex align-items-center">
-    <p class="mb-0 mr-3">Voulez-vous utiliser la première ligne comme le header ?</p>
+    <p class="mb-0 mr-3">{{'upload.fileDetail.firstLineAsHeader' | translate}}</p>
     <div>
-      <input type="radio" class="mr-2" (click)="useFirstLink(true)" [value]="true" name="isUseFirstLink" [(ngModel)]="isUseFirstLink">Yes
-      <input class="ml-3 mr-2" type="radio" (click)="useFirstLink(false)" [value]="false" name="isUseFirstLink" [(ngModel)]="isUseFirstLink">No
+      <input type="radio" class="mr-2" (click)="useFirstLink(true)" [value]="true" name="isUseFirstLink" [(ngModel)]="isUseFirstLink">{{'global.yes' | translate}}
+      <input class="ml-3 mr-2" type="radio" (click)="useFirstLink(false)" [value]="false" name="isUseFirstLink" [(ngModel)]="isUseFirstLink">{{'global.no' | translate}}
     </div>
   </div>
   <div class="d-flex flex-row my-2" *ngIf="!isUseFirstLink">
-    <label class="mr-2" for="">Nommez les colonnes:</label>
+    <label class="mr-2" for="">{{'upload.fileDetail.nameOfColumns' | translate}}</label>
     <div>
       <input type="text" *ngFor="let col of arrayHeaderEmpty" class="form-control" placeholder="column {{col.id +1}}" [(ngModel)]="col.colName" name="col.colName"
         (focus)="$event.target.placeholder = ''" (blur)="$event.target.placeholder = 'column ' + (col.id +1)" />
     </div> 
   </div>
   <div class="d-flex align-items-center">
-    <p class="mb-0 mr-3">Voulez-vous supprimer la première ligne ?</p>
+    <p class="mb-0 mr-3">{{'upload.fileDetail.deleteFirstLine' | translate}}</p>
     <div>
-      <input type="radio" class="mr-2" (click)="deleteFirstLink(true)" [value]="true" name="isDeleteFirstLink" [(ngModel)]="isDeleteFirstLink">Yes
-      <input class="ml-3 mr-2" type="radio" (click)="deleteFirstLink(false)" [value]="false" name="isDeleteFirstLink" [(ngModel)]="isDeleteFirstLink">No
+      <input type="radio" class="mr-2" (click)="deleteFirstLink(true)" [value]="true" name="isDeleteFirstLink" [(ngModel)]="isDeleteFirstLink">{{'global.yes' | translate}}
+      <input class="ml-3 mr-2" type="radio" (click)="deleteFirstLink(false)" [value]="false" name="isDeleteFirstLink" [(ngModel)]="isDeleteFirstLink">{{'global.no' | translate}}
     </div>
   </div>
 </div>
 
 <div class="text-center">
-   <button type="button" class="btn btn-success btn-s" (click)="submit()">Next</button>
+   <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'upload.btnNext' | translate}}</button>
 </div>

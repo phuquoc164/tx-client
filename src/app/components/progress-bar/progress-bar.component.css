@@ -1,28 +1,6 @@
-/*p {
-	border: 1px solid #000;
-	border-right: 0;
-    padding: 10px;
-    position: relative;
-}
-p:not(:first-child) {border-left: 0;padding-left:30px;}
-
-p::after {
-	content: '';
-	position: absolute;
-	border-top: 1px solid #000;
-	border-right: 1px solid #000;
-	width: 32px;
-	height: 32px;
-	transform: rotate(45deg);
-	top: 6px;
-	right: -16px;
-	z-index: -1;
-}
-
-p.active, p.active::after {background-color: #007bff;}*/
 div::before {
 	content: '';
-    width: 75%;
+    width: 67%;
     height: 2px;
     background-color: #e6e6e6;
     top: 19px;
@@ -56,4 +34,4 @@ p::before {
 p.step-2::before {content: '2';}
 p.step-3::before {content: '3';}
 p.step-4::before {content: '4';}
-p.active::before {background-color: #000;}
+p.active::before {background-color: #28a745;;}

@@ -11,4 +11,4 @@ button {
 	border: 1px solid #000;
 }
 
-.height-350 {min-height: 350px;max-width: 800px;margin: 0 auto;}
+.height-350 {min-height: 350px;max-width: 800px;margin: 0 auto;border: 2px solid #dee2e6;border-radius: 5px;}

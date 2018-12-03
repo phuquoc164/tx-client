@@ -1,7 +1,10 @@
-<div *ngFor="let col of firstLine">
-  <p> {{col.colName}} ( empty: {{col.dataEmpty*100}}%, false: {{col.dataError*100}}% ) </p> 
+<div class="height-350 border border-dark mb-5 p-2">
+  <p>{{'upload.fileQuality.title' | translate}}</p>
+  <div *ngFor="let col of firstLine" class="px-5">
+    <p class="mb-0"> {{col.colName}} ( empty: {{col.dataEmpty*100}}%, false: {{col.dataError*100}}% ) </p> 
+  </div>
 </div>
 
 <div class="text-center">
-	<button type="button" class="btn btn-success btn-s" (click)="submit()">Next</button>
+	<button type="button" class="btn btn-success btn-s" (click)="submit()">{{'upload.btnNext' | translate}}</button>
 </div>
