@@ -38,7 +38,9 @@
     },
     "global": {
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "btnNext": "Next",
+        "btnSubmit": "Submit"
     }
 
 }

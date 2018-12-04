@@ -7,3 +7,7 @@ input {
     width: 100%;
     max-width: 300px;
 }
+
+.display-keyword {
+    padding-left: 130px;
+}

@@ -1,5 +1,7 @@
+import { Constants } from 'src/app/shared/constatns';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { LocalStorageService } from './../../services/local-storage.service';
 import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class FileInfosComponent implements OnInit {
   keywordsList:any = [];
   constructor(
     private formBuilder: FormBuilder,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private localStorageService: LocalStorageService
   ) { 
     this.informationForm = this.formBuilder.group({
       fileName: ['',Validators.required],
@@ -27,8 +30,10 @@ export class FileInfosComponent implements OnInit {
 
   enterKeyword(){
     console.log(this.keyword)
-    this.keywordsList.push(this.keyword);
-    this.keyword = "";
+    if (this.keyword && this.keyword != '') {
+      this.keywordsList.push(this.keyword);
+      this.keyword = "";
+    }
   }
 
   deleteKeyword(){
@@ -44,6 +49,7 @@ export class FileInfosComponent implements OnInit {
       this.uploadService.sendInformationsFile(this.informationForm.value).then(data => {
         console.log(data);
       })
+      this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,6);
     }
   }
 }

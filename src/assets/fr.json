@@ -4,7 +4,6 @@
         "Restitution_Button": "Restitution"
     },
     "upload": {
-        "btnNext": "Suivant",
         "progressbar": {
             "selectFile": "Choisir le fichier",
             "selectData": "Choisir les données",
@@ -38,6 +37,8 @@
     },
     "global": {
         "yes": "Oui",
-        "no": "Non"
+        "no": "Non",
+        "btnNext": "Suivant",
+        "btnSubmit": "Valider"
     }
 }
