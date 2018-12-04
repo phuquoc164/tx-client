@@ -1,3 +1,17 @@
 <p>
   upload-validation works!
 </p>
+
+<form [formGroup]="informationForm">
+  <div class="form-group">
+    <label>Nom du fichier:</label>
+    <input class="form-control" formControlName="fileName" disabled>
+    <label>Auteur:</label>
+    <input class="form-control" formControlName="autor" disabled>
+    <label>Mot-clès:</label>
+    <input class="form-control" formControlName="keyword" disabled>
+    <label>Description:</label>
+    <input class="form-control" formControlName="description" disabled>
+  </div>
+</form>
+
