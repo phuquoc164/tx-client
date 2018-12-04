@@ -37,7 +37,6 @@ export class ProgressBarComponent implements OnInit {
         else isInstep = false
         break;
       case "5":
-        console.log(number)
         if (number <= 3) isInstep = true;
         else isInstep = false
         break;
