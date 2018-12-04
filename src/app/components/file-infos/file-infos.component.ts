@@ -25,19 +25,19 @@ export class FileInfosComponent implements OnInit {
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-  submit() {
-    
-  }
-
-=======
   enterKeyword(){
     console.log(this.keyword)
     this.keywordsList.push(this.keyword);
     this.keyword = "";
   }
 
+  deleteKeyword(){
+    
+  }
+
   submit(){
+    this.informationForm.value['keywords'] = this.keywordsList
+      console.log(this.informationForm.value);
     if (this.informationForm.valid) {
       this.informationForm.value['keywords'] = this.keywordsList
       console.log(this.informationForm.value);
@@ -46,5 +46,4 @@ export class FileInfosComponent implements OnInit {
       })
     }
   }
->>>>>>> bao
 }

@@ -1,57 +1,40 @@
-<<<<<<< HEAD
-<div class="height-350 border border-dark mb-5 p-2">
-    <p>{{'upload.fileInfo.title' | translate}}</p>
-    <div class="form-infos">
-      <div class="d-flex mb-2">
-        <label for="nameFile">{{'upload.fileInfo.nameFile' | translate}}</label>
-        <input type="text" id="nameFile" placeholder="test">
-      </div>
-      <div class="d-flex mb-2">
-        <label for="author">{{'upload.fileInfo.author' | translate}}</label>
-        <input type="text" id="author" placeholder="test">
-      </div>
-      <div class="mb-2">
-        <label for="keyword">{{'upload.fileInfo.keyword' | translate}}</label>
-        <input type="text" id="keyword" placeholder="test">
-        <button type="button" class="p-0 border-0 ml-2" (click)="addKeyword()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#28a745" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
-        </button>
-        <div>
-
-        </div>
-      </div>
-      <div class="d-flex mb-2">
-        <label for="descriptionFile" class="valign-top">Description</label>
-        <textarea name="" id="descriptionFile" cols="30" rows="5" class="w-100"></textarea>
-      </div>
-    </div>
-  </div>
-  
-  <div class="text-center">
-    <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'upload.btnNext' | translate}}</button>
-  </div>
-=======
 <p>
   file-infos works!
 </p>
 
-<form [formGroup]="informationForm">
-  <div class="form-group">
-    <label>Nom du fichier:</label>
-    <input class="form-control" formControlName="fileName">
-    <label>Auteur:</label>
-    <input class="form-control" formControlName="autor">
-    <label>Mot-clès:</label>
-    <input class="form-control" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}">
-    <button (click)="enterKeyword()">OK</button>
-    <label *ngFor="let key of keywordsList">{{key}},</label>
-    <br>
-    <label>Description:</label>
-    <input class="form-control" formControlName="description">
-  </div>
-</form>
+<div class="height-350 border border-dark mb-5 p-2">
+  <p>{{'upload.fileInfo.title' | translate}}</p>
+  <form [formGroup]="informationForm">
+    <div class="d-flex mb-2">
+      <label for="nameFile">{{'upload.fileInfo.nameFile' | translate}}</label>
+      <input type="text" id="nameFile" placeholder="..." formControlName="fileName">
+    </div>
+    <div class="d-flex mb-2">
+      <label for="author">{{'upload.fileInfo.author' | translate}}</label>
+      <input type="text" id="author" placeholder="..." formControlName="autor">
+    </div>
+    <div class="mb-2">
+      <label for="keyword">{{'upload.fileInfo.keyword' | translate}}</label>
+      <input type="text" id="keyword" placeholder="test" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}">
+      <button type="button" class="p-0 border-0 ml-2" (click)="enterKeyword()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#28a745" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+      </button>
+      <div class="display-keyword">
+        <div class="single-keyword" *ngFor="let key of keywordsList">
+          <p class="mb-0">{{key}}</p>
+          <button (click)="deleteKeyword()">
+
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex mb-2">
+      <label for="descriptionFile" class="valign-top">Description</label>
+      <textarea name="" id="descriptionFile" cols="30" rows="5" class="w-100" formControlName="description"></textarea>
+    </div>
+  </form>
+</div>
 
 <div class="text-center">
-  <button type="button" class="btn btn-success btn-s" (click)="submit()">Next</button>
+  <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'upload.btnNext' | translate}}</button>
 </div>
->>>>>>> bao
