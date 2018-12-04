@@ -38,8 +38,8 @@ export class FileSettingComponent implements OnInit {
       this.selectAll,
       this.firstLine
     ).then(data => {
-      this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_3, data.urlFile);
-      this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_EDITED, data.urlFile);
+      this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_3, data.datasFile);
+      this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_EDITED, data.urlFile);
       this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,4);
       console.log(data)
     })
