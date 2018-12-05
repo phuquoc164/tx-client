@@ -16,11 +16,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="#28a745" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
       </button>
       <div class="display-keyword">
-        <div class="single-keyword d-inline-block" *ngFor="let key of keywordsList">
-          <p class="mb-0 mr-2">{{key}}</p>
-          <!-- <button (click)="deleteKeyword()">
-
-          </button> -->
+        <div class="single-keyword d-inline-block mr-2 mt-2" *ngFor="let key of keywordsList">
+          <button class="d-inline-block p-0 border-0 mr-2" (click)="deleteKeyword(key)">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#ff0000" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"/></svg>
+          </button>
+          <p class="mb-0 d-inline-block">{{key}}</p>
         </div>
       </div>
     </div>

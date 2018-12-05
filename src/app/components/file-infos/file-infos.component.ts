@@ -30,10 +30,15 @@ export class FileInfosComponent implements OnInit {
 
   enterKeyword(){
     console.log(this.keyword);
-    if (this.keyword && this.keyword != '') {
+    if (this.keyword && this.keyword != '' && this.keywordsList.indexOf(this.keyword) == -1) {
       this.keywordsList.push(this.keyword);
       this.keyword = "";
     }
+  }
+
+  deleteKeyword(key) {
+    this.keywordsList.splice(this.keywordsList.indexOf(key), 1);
+    console.log(this.keywordsList);
   }
 
   submit(){
