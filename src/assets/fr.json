@@ -33,6 +33,11 @@
             "author": "Auteurs",
             "keyword": "Mot clés",
             "Description": "Description"
+        },
+        "uploadValidation": {
+            "title": "Votre fichier a été enregistré. Voici les informations du fichier :",
+            "qualityFile": "Mise en qualité du fichier",
+            "uploadOtherFile": "Charger un autre fichier"
         }
     },
     "global": {

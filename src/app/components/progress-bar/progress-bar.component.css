@@ -1,4 +1,4 @@
-div::before {
+/* div::before {
 	content: '';
     width: 67%;
     height: 2px;
@@ -8,12 +8,30 @@ div::before {
     position: absolute;
     z-index: 1;
     transform: translateX(-50%);	
-}
+} */
 
 p {
 	padding: 45px 20px 0;
     text-align: center;
 }
+
+p::after {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: #e6e6e6;
+    top: 19px;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-50%);	
+}
+
+p.step-2::after, p.step-3::after  {
+    width: 101%;
+    left: 50%;
+}
+p.step-1::after {right: -25%;} 
+p.step-4::after {left: 25%;}
 
 p::before {
 	content: '1';

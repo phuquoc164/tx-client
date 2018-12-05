@@ -11,7 +11,7 @@
     </div>
     <div class="mb-2">
       <label for="keyword">{{'upload.fileInfo.keyword' | translate}}</label>
-      <input type="text" id="keyword" placeholder="test" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}">
+      <input type="text" id="keyword" placeholder="..." [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}">
       <button type="button" class="p-0 border-0 ml-2" (click)="enterKeyword()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#28a745" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
       </button>
@@ -32,5 +32,5 @@
 </div>
 
 <div class="text-center">
-  <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'upload.btnNext' | translate}}</button>
+  <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'global.btnSubmit' | translate}}</button>
 </div>

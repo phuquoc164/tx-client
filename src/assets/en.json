@@ -4,7 +4,6 @@
         "Restitution_Button": "Restitution"
     },
     "upload": {
-        "btnNext": "Next",
         "progressbar": {
             "selectFile": "Select file",
             "selectData": "select data",
@@ -34,6 +33,11 @@
             "author": "Authors",
             "keyword": "Keywords",
             "Description": "Description"
+        },
+        "uploadValidation": {
+            "title": "Your file has been saved. Here are the informations of your file :",
+            "qualityFile": "Setting the quality of file",
+            "uploadOtherFile": "Upload another file"
         }
     },
     "global": {

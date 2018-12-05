@@ -1,17 +1,27 @@
-<p>
-  upload-validation works!
-</p>
+<div class="height-350 border border-dark mb-5 p-2">
+  <p>{{'upload.uploadValidation.title' | translate}}</p>
+  <form [formGroup]="informationForm">
+    <div class="d-flex mb-2">
+      <label for="nameFile">{{'upload.fileInfo.nameFile' | translate}}</label>
+      <input type="text" id="nameFile"  disabled formControlName="fileName">
+    </div>
+    <div class="d-flex mb-2">
+      <label for="author">{{'upload.fileInfo.author' | translate}}</label>
+      <input type="text" id="author"  disabled formControlName="autor">
+    </div>
+    <div class="d-flex mb-2">
+      <label for="keyword">{{'upload.fileInfo.keyword' | translate}}</label>
+      <input class="form-control" formControlName="keyword" disabled>
+    </div>
+    <div class="d-flex mb-2">
+      <label for="descriptionFile" class="valign-top">Description</label>
+      <textarea name="" id="descriptionFile" cols="30"  disabled rows="5" class="w-100" formControlName="description"cd></textarea>
+    </div>
+  </form>
+</div>
 
-<form [formGroup]="informationForm">
-  <div class="form-group">
-    <label>Nom du fichier:</label>
-    <input class="form-control" formControlName="fileName" disabled>
-    <label>Auteur:</label>
-    <input class="form-control" formControlName="autor" disabled>
-    <label>Mot-clès:</label>
-    <input class="form-control" formControlName="keyword" disabled>
-    <label>Description:</label>
-    <input class="form-control" formControlName="description" disabled>
-  </div>
-</form>
+<div class="text-center">
+  <button type="button" class="btn btn-warning btn-s mx-2" (click)="submit()">{{'upload.uploadValidation.qualityFile' | translate}}</button>
+  <button type="button" class="btn btn-success btn-s mx-2" (click)="submit()">{{'upload.uploadValidation.uploadOtherFile' | translate}}</button>
+</div>
 

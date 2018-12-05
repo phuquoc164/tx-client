@@ -29,9 +29,11 @@ export class FileInfosComponent implements OnInit {
   }
 
   enterKeyword(){
-    console.log(this.keyword)
-    this.keywordsList.push(this.keyword);
-    this.keyword = "";
+    console.log(this.keyword);
+    if (this.keyword && this.keyword != '') {
+      this.keywordsList.push(this.keyword);
+      this.keyword = "";
+    }
   }
 
   submit(){
