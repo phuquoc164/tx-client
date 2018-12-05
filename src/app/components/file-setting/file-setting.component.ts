@@ -14,6 +14,8 @@ export class FileSettingComponent implements OnInit {
   selectAll:any = true;
   dataStep2:any;
   typeData: String[] = Constants.TYPE_DATA;
+  isLoading:boolean = false;
+
   constructor(
     private localStorageService :LocalStorageService,
     private uploadService: UploadService
@@ -30,7 +32,7 @@ export class FileSettingComponent implements OnInit {
   submit(){
     console.log("this.selectAll",this.selectAll);
     console.log("this.firstLine",this.firstLine);
-
+    this.isLoading = true;
     this.uploadService.analyseFile(
       this.localStorageService.getValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_ORIGINAL),
       this.dataStep2.isUseFirstLink,
@@ -38,11 +40,15 @@ export class FileSettingComponent implements OnInit {
       this.selectAll,
       this.firstLine
     ).then(data => {
+      this.isLoading = false;
       this.localStorageService.saveJsonInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP_3, data.datasFile);
       this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_EDITED, data.urlFile);
       this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,4);
       console.log(data)
     })
-    .catch(error => console.error(error))
+    .catch(error => {
+      this.isLoading = false;
+      console.error(error)
+    })
   }
 }
