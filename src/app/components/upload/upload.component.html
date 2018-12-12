@@ -1,5 +1,5 @@
 <div class="container-fluid chargement">
-	<div class="row justify-content-center">
+	<div *ngIf="isInUpload()" class="row justify-content-center">
 
 		<!-- Progress bar -->
 		<div class="col-12 col-md-9 px-1 progess-bar mb-5">
@@ -39,9 +39,8 @@
 		<div *ngIf="isInStep(6)" class="col-12 col-md-9 px-1">
 			<app-upload-validation></app-upload-validation>
 		</div>
-
-		<div *ngIf="isInStep(7)" class="col-12 col-md-9 px-1">
-			<app-quality-setting></app-quality-setting>
-		</div>
+	</div>
+	<div *ngIf="isInStep(7)" class="col-12 col-md-9 px-1">
+		<app-quality-setting></app-quality-setting>
 	</div>
 </div>

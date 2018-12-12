@@ -21,4 +21,8 @@ export class UploadComponent implements OnInit {
   isInStep(number){
     return number == this.localStorageService.getValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP);
   }
+
+  isInUpload(number){
+    return this.localStorageService.getValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP) < "7";
+  }
 }
