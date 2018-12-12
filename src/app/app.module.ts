@@ -19,6 +19,7 @@ import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FileUploadQualityComponent } from './components/file-upload-quality/file-upload-quality.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { QualitySettingComponent } from './components/quality-setting/quality-setting.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/', '.json');
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProgressBarComponent,
     UploadValidationComponent,
     FileSelectDirective,
-    FileUploadQualityComponent
+    FileUploadQualityComponent,
+    QualitySettingComponent
   ],
   imports: [
     BrowserModule,
