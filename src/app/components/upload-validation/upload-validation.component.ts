@@ -30,4 +30,7 @@ export class UploadValidationComponent implements OnInit {
     });
   }
 
+  goQualitySetting(){
+    this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,7);
+  }
 }
