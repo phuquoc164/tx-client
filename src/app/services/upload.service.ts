@@ -48,4 +48,22 @@ export class UploadService {
         );
     });
   }
+
+  improveData(colsHeader, optionsOptimisationDataEmpty, optionsOptimisationDataFail){
+    return new Promise<any>((resolve, reject) => {
+      let linkEdited = this.localStorageService.getValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_LINK_EDITED);
+
+      let body = {
+        linkEdited: linkEdited,
+        colsHeader: colsHeader,
+        optionsOptimisationDataEmpty: optionsOptimisationDataEmpty,
+        optionsOptimisationDataFail: optionsOptimisationDataFail
+      }
+      this.http.post(Routes_api.improveData, body)
+        .subscribe(
+          (data) => resolve(data["data"]),
+          (error) => reject(error)
+        );
+    });
+  }
 }
