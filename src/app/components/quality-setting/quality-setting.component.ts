@@ -15,6 +15,8 @@ export class QualitySettingComponent implements OnInit {
   firstLine: any = [];
   optionsOptimisationDataFail: any = {};
   optionsOptimisationDataEmpty: any = {};
+  isLoading:boolean = false;
+  isFinish:boolean = false;
   constructor(
     private localStorageService: LocalStorageService,
     private uploadService: UploadService
@@ -85,8 +87,28 @@ export class QualitySettingComponent implements OnInit {
   }
 
   submit(){
+    this.isLoading = true;
     this.uploadService.improveData(this.firstLine,this.optionsOptimisationDataEmpty,this.optionsOptimisationDataFail).then((data) =>{
       console.log(data)
-    }).catch(err => console.error(err))
+      this.isLoading = false;
+      this.firstLine = [];
+      data.datasFile.forEach(col => {
+        let colHeader = new ColHeader(col.id, col.colName)
+        colHeader.setType(col.type);
+        colHeader.select();
+        colHeader.dataEmpty = (col.dataEmpty) ? col.dataEmpty : 0;
+        colHeader.dataError = (col.dataError) ? col.dataError : 0;
+        this.firstLine.push(colHeader);
+        this.isFinish = true;
+      });  
+    }).catch(err => {
+      this.isLoading = false;
+      console.error(err)
+    })
+  }
+
+  goHome(){
+    this.localStorageService.clearSessionStorage();
+    this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,1);
   }
 }
