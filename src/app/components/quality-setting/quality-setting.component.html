@@ -7,7 +7,7 @@
   </div>
 </div>
 <!-- Afficher 10 premieress lignes -->
-<div class="mb-5">
+<div class="mb-5"  *ngIf="!isFinish">
   <h3 class="text-center mb-2">{{'upload.qualitySetting.titleTable' | translate}}</h3>
   <div class="border border-dark">
     <div class="table-data" style="overflow:scroll;height: 450px;"  *ngIf="!isFinish">
