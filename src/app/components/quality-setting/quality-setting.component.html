@@ -42,8 +42,8 @@
         </div>
         <div *ngFor="let col of firstLine">
           <div *ngIf="col.id == selectedColID">
-            <div>
-              <p class="mb-0">{{'upload.qualitySetting.fieldFail' | translate}}</p>
+            <div class="d-flex justify-content-between mb-3">
+              <p class="mb-0 mr-2" style="width: 100%;">{{'upload.qualitySetting.fieldFail' | translate}}</p>
               <select class='form-control' (change)="changeValueFail(col.id,$event)" [value]='valueFieldFail[col.id]'>
                 <option value='deleterow'>Supprimer la ligne</option>
                 <option value='deletefield'>Supprimer les champs</option>
@@ -52,8 +52,8 @@
               </select>
               <input type="text" *ngIf="optionsOptimisationDataFail[col.id].isFillIn" [(ngModel)]="optionsOptimisationDataFail[col.id].fill" />
             </div>
-            <div>
-              <p class="mb-0">{{'upload.qualitySetting.fieldEmpty' | translate}}</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-0 mr-2" style="width: 100%;">{{'upload.qualitySetting.fieldEmpty' | translate}}</p>
               <select class='form-control' (change)="changeValueEmpty(col.id,$event)" [value]='valueFieldEmpty[col.id]'>
                 <option value='deleterow'>Supprimer la ligne</option>
                 <option value='deletefield'>Supprimer les champs</option>
@@ -69,11 +69,11 @@
 </div>
   
 
-  <div class="text-center" *ngIf="!isFinish">
-    <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'global.btnNext' | translate}}</button>
-  </div>
-  <div class="text-center" *ngIf="isFinish">
-    <button type="button" class="btn btn-success btn-s" (click)="goHome()">{{'upload.uploadValidation.uploadOtherFile' | translate}}</button>
-  </div>
+<div class="text-center mt-3" *ngIf="!isFinish">
+  <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'global.btnNext' | translate}}</button>
+</div>
+<div class="text-center mt-3" *ngIf="isFinish">
+  <button type="button" class="btn btn-success btn-s" (click)="goHome()">{{'upload.uploadValidation.uploadOtherFile' | translate}}</button>
+</div>
 
-<div class="loader" *ngIf="isLoading"></div>
+<div class="loader"></div>
