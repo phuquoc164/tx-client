@@ -38,6 +38,15 @@
             "title": "Your file has been saved. Here are the informations of your file :",
             "qualityFile": "Setting the quality of file",
             "uploadOtherFile": "Upload another file"
+        },
+        "qualitySetting": {
+            "title": "Quality Setting",
+            "titleQuality": "The result of the analysic of your data:",
+            "titleTable": "First 10 lines are empty or false",
+            "titleConfiguration": "Configure your database",
+            "selectCol": "Select a column which you want to configure",
+            "fieldFail": "Configuration for false fields",
+            "fieldEmpty": "Configuration for empty fields"
         }
     },
     "global": {

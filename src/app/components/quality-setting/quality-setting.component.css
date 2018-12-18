@@ -7,9 +7,19 @@
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
     margin: auto
-  }
+}
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+th, td {
+  border: 1px solid #000000;
+}
+tr:first-child {
+  background-color: #888888;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

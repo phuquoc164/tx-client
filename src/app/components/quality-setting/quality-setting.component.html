@@ -1,45 +1,73 @@
-<div class="height-350 border border-dark mb-5 p-2">
-  <p>{{'upload.fileQuality.title' | translate}}</p>
+﻿<!-- Afficher les resultats de l'analyse -->
+<h1 class="text-center mb-4">{{'upload.qualitySetting.title' | translate}}</h1>
+<div class="border border-dark mb-5 p-2">
+  <p>{{'upload.qualitySetting.titleQuality' | translate}}</p>
   <div *ngFor="let col of firstLine" class="px-5">
     <p class="mb-0"> {{col.colName}} ( empty: {{col.dataEmpty*100}}%, false: {{col.dataError*100}}% ) </p>
   </div>
-  <table *ngIf="!isFinish">
-    <tr>
-      <th *ngFor="let col of firstLine">
-        {{col.colName}}
-      </th>
-    </tr>
-    <tr *ngFor="let row of dataErrorOrEmpty">
-      <td *ngFor="let col of firstLine">
-        {{row[col.colName]}}
-      </td>
-    </tr>
-  </table>
-
-  <div *ngIf="!isFinish">
-    choisir ...
-    <div *ngFor="let col of firstLine">
-      {{col.colName}}
-      <div>Pour les champs faux :
-        <select class='form-control' (change)="changeValueFail(col.id,$event)" [value]='0'>
-          <option value='deleterow'>Supprimer la ligne</option>
-          <option value='deletefield'>Supprimer les champs</option>
-          <option value='fillin'>remplir par</option>
-          <option value='0'>Non</option>
-        </select>
-        <input type="text" *ngIf="optionsOptimisationDataFail[col.id].isFillIn" [(ngModel)]="optionsOptimisationDataFail[col.id].fill" />
-      </div>
-      <div>Pour les champs vides :
-        <select class='form-control' (change)="changeValueEmpty(col.id,$event)" [value]='0'>
-          <option value='deleterow'>Supprimer la ligne</option>
-          <option value='deletefield'>Supprimer les champs</option>
-          <option value='fillin'>remplir par</option>
-          <option value='0' selected>Non</option>
-        </select>
-        <input type="text" *ngIf="optionsOptimisationDataEmpty[col.id].isFillIn" [(ngModel)]="optionsOptimisationDataEmpty[col.id].fill" />
-      </div>
+</div>
+<!-- Afficher 10 premieress lignes -->
+<div class="mb-5">
+  <h3 class="text-center mb-2">{{'upload.qualitySetting.titleTable' | translate}}</h3>
+  <div class="border border-dark">
+    <div class="table-data" style="overflow:scroll;height: 450px;"  *ngIf="!isFinish">
+        <table>
+          <tr>
+            <th class="text-center px-1" *ngFor="let col of firstLine">
+              {{col.colName}}
+            </th>
+          </tr>
+          <tr *ngFor="let row of dataErrorOrEmpty">
+            <td class="px-1" *ngFor="let col of firstLine">
+              {{row[col.colName]}}
+            </td>
+          </tr>
+        </table>
     </div>
   </div>
+</div>
+
+<!-- Afficher les configurations -->
+<div class="">
+  <div *ngIf="!isFinish">
+      <h3 class="text-center mb-2">{{'upload.qualitySetting.titleConfiguration' | translate}}</h3>
+      <div class="border border-dark p-2">
+        <div class="d-flex align-items-center mb-3">
+          <p class="mb-0 mr-3">{{'upload.qualitySetting.selectCol' | translate}}</p>
+          <select (change)="selectCol($event)" [value]="firstLine[0].id" style="min-width:150px;">
+            <option [value]="col.id" *ngFor="let col of firstLine">
+              {{col.colName}}
+            </option>
+          </select>
+        </div>
+        <div *ngFor="let col of firstLine">
+          <div *ngIf="col.id == selectedColID">
+            <div>
+              <p class="mb-0">{{'upload.qualitySetting.fieldFail' | translate}}</p>
+              <select class='form-control' (change)="changeValueFail(col.id,$event)" [value]='valueFieldFail[col.id]'>
+                <option value='deleterow'>Supprimer la ligne</option>
+                <option value='deletefield'>Supprimer les champs</option>
+                <option value='fillin'>remplir par</option>
+                <option value='0'>Non</option>
+              </select>
+              <input type="text" *ngIf="optionsOptimisationDataFail[col.id].isFillIn" [(ngModel)]="optionsOptimisationDataFail[col.id].fill" />
+            </div>
+            <div>
+              <p class="mb-0">{{'upload.qualitySetting.fieldEmpty' | translate}}</p>
+              <select class='form-control' (change)="changeValueEmpty(col.id,$event)" [value]='valueFieldEmpty[col.id]'>
+                <option value='deleterow'>Supprimer la ligne</option>
+                <option value='deletefield'>Supprimer les champs</option>
+                <option value='fillin'>remplir par</option>
+                <option value='0' selected>Non</option>
+              </select>
+              <input type="text" *ngIf="optionsOptimisationDataEmpty[col.id].isFillIn" [(ngModel)]="optionsOptimisationDataEmpty[col.id].fill" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
 
   <div class="text-center" *ngIf="!isFinish">
     <button type="button" class="btn btn-success btn-s" (click)="submit()">{{'global.btnNext' | translate}}</button>
@@ -47,6 +75,5 @@
   <div class="text-center" *ngIf="isFinish">
     <button type="button" class="btn btn-success btn-s" (click)="goHome()">{{'upload.uploadValidation.uploadOtherFile' | translate}}</button>
   </div>
-</div>
 
 <div class="loader" *ngIf="isLoading"></div>

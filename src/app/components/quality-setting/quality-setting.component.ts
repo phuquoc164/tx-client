@@ -17,6 +17,9 @@ export class QualitySettingComponent implements OnInit {
   optionsOptimisationDataEmpty: any = {};
   isLoading:boolean = false;
   isFinish:boolean = false;
+  selectedColID: any;
+  valueFieldFail = {};
+  valueFieldEmpty = {};
   constructor(
     private localStorageService: LocalStorageService,
     private uploadService: UploadService
@@ -31,10 +34,13 @@ export class QualitySettingComponent implements OnInit {
       colHeader.dataEmpty = (col.dataEmpty) ? col.dataEmpty : 0;
       colHeader.dataError = (col.dataError) ? col.dataError : 0;
       this.firstLine.push(colHeader);
+      this.valueFieldFail[col.id] = 0;
+      this.valueFieldEmpty[col.id] = 0;
       this.optionsOptimisationDataFail[colHeader.id] = { name: colHeader.colName, isNoChange: true, isDeleteRow: false, isDeleteField: false, isFillIn: false, fill: "" };
       this.optionsOptimisationDataEmpty[colHeader.id] = { name: colHeader.colName, isNoChange: true, isDeleteRow: false, isDeleteField: false, isFillIn: false, fill: "" };
     });
     console.log("this.firstLine", this.firstLine)
+    this.selectedColID = this.firstLine[0].id;
 
     this.dataErrorOrEmpty = this.localStorageService.getJsonInsessionStorage(Constants.STORAGE_KEYS.DATA_EMPTY_OR_ERROR);
     console.log("this.dataErrorOrEmpty", this.dataErrorOrEmpty)
@@ -47,6 +53,7 @@ export class QualitySettingComponent implements OnInit {
     this.optionsOptimisationDataFail[id].isNoChange = false;
     console.log(id)
     console.log(event.target.value)
+    this.valueFieldFail[id] = event.target.value;
     switch (event.target.value) {
       case "deleterow":
         this.optionsOptimisationDataFail[id].isDeleteRow = true;
@@ -60,7 +67,14 @@ export class QualitySettingComponent implements OnInit {
       default:
         this.optionsOptimisationDataFail[id].isNoChange = true;
     }
+    console.log(this.valueFieldFail[id])
+
     console.log(this.optionsOptimisationDataFail[id])
+  }
+
+  selectCol(event) {
+    console.log(event);
+    this.selectedColID = event.target.value;
   }
 
   changeValueEmpty(id, event) {
@@ -70,6 +84,7 @@ export class QualitySettingComponent implements OnInit {
     this.optionsOptimisationDataEmpty[id].isNoChange = false;
     console.log(id)
     console.log(event.target.value)
+    this.valueFieldEmpty[id] = event.target.value;
     switch (event.target.value) {
       case "deleterow":
         this.optionsOptimisationDataEmpty[id].isDeleteRow = true;

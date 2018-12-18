@@ -12,7 +12,7 @@ export class UploadComponent implements OnInit {
   constructor(
     private localStorageService: LocalStorageService
   ) { 
-    this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,1);
+    this.localStorageService.saveValueInSessionStorage(Constants.STORAGE_KEYS.UPLOAD_STEP,7);
   }
 
   ngOnInit() {

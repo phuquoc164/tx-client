@@ -24,9 +24,6 @@
             "selectAllColumn": "Selectionner tous les colonnes",
             "selectColumnSpecifique": "Selectionner des colonnes spécifiques"
         },
-        "fileQuality": {
-            "title": "Le résultat de l'analyse de vos données :"
-        },
         "fileInfo": {
             "title": "Remplir les informations pour ce fichier",
             "nameFile": "Nom du fichier",
@@ -38,6 +35,15 @@
             "title": "Votre fichier a été enregistré. Voici les informations du fichier :",
             "qualityFile": "Mise en qualité du fichier",
             "uploadOtherFile": "Charger un autre fichier"
+        },
+        "qualitySetting": {
+            "title": "Mise en qualité",
+            "titleQuality": "Le résultat de l'analyse de vos données :",
+            "titleTable": "Les 10 premières lignes sont vides ou fausses",
+            "titleConfiguration": "Configurer votre base des données",
+            "selectCol": "Choisir une colonne que vous voulez configurer",
+            "fieldFail": "Configuration pour les champs faux",
+            "fieldEmpty": "Configuration pour les champs vides"
         }
     },
     "global": {

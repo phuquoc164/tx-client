@@ -20,9 +20,12 @@
         </a>
       </div>
     </div>
-  
-    <app-upload *ngIf="isUpload"></app-upload>
-    <app-restitution *ngIf="isRestitution"></app-restitution>
-    <p>{{responseServer}}</p>
   </div>
 </div>
+  
+<div class="container chargement">
+    <app-upload *ngIf="isUpload"></app-upload>
+</div>
+    
+<app-restitution *ngIf="isRestitution"></app-restitution>
+<p>{{responseServer}}</p>
