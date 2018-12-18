@@ -10,6 +10,9 @@
             "fill": "Remplir les informations",
             "valid": "Valider"
         },
+        "fileQuality": {
+            "title": "Le résultat de l'analyse de vos données :"
+        },
         "fileDetail": {
             "firstLine": "La première ligne du fichier est",
             "firstLineAsHeader": "Voulez-vous utiliser la première ligne comme le header ?",
@@ -40,10 +43,13 @@
             "title": "Mise en qualité",
             "titleQuality": "Le résultat de l'analyse de vos données :",
             "titleTable": "Les 10 premières lignes sont vides ou fausses",
-            "titleConfiguration": "Configurer votre base des données",
+            "titleConfiguration": "Configurer vos colonnes",
             "selectCol": "Choisir une colonne que vous voulez configurer",
             "fieldFail": "Configuration pour les champs faux",
-            "fieldEmpty": "Configuration pour les champs vides"
+            "fieldEmpty": "Configuration pour les champs vides",
+            "deleterow": "Supprimer les lignes",
+            "deleteField": "Supprimer les champs",
+            "fillin": "Remplir par"
         }
     },
     "global": {

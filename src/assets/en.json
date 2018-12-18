@@ -43,10 +43,13 @@
             "title": "Quality Setting",
             "titleQuality": "The result of the analysic of your data:",
             "titleTable": "First 10 lines are empty or false",
-            "titleConfiguration": "Configure your database",
+            "titleConfiguration": "Configure your columns",
             "selectCol": "Select a column which you want to configure",
             "fieldFail": "Configuration for false fields",
-            "fieldEmpty": "Configuration for empty fields"
+            "fieldEmpty": "Configuration for empty fields",
+            "deleterow": "Delete the rows",
+            "deleteField": "Delete the fields",
+            "fillin": "Replace by"
         }
     },
     "global": {
